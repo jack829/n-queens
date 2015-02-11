@@ -98,7 +98,12 @@
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
-      // if 
+      var board = this.rows();
+      for (var i = 0 ; i < board.length ; i ++){
+        if(this.hasRowConflictAt(i)){
+          return true;
+        }
+      }
       return false; // fixme
     },
 
