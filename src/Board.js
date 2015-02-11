@@ -79,11 +79,26 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
+      // check if a row has > 1 '1' 
+        // then return true
+      // else
+      var rowChecked = this.get(rowIndex);
+      var count = 0;
+      for(var i=0; i<rowChecked.length; i++){
+        if(rowChecked[i] === 1){
+          count += 1;
+        };
+      }
+      if(count>1){
+        return true;
+      }
+
       return false; // fixme
     },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
+      // if 
       return false; // fixme
     },
 
