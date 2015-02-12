@@ -5,7 +5,6 @@
   |___/\___/|_| \_/ \___|_|  |___/
 
 */
-// testing git
 // hint: you'll need to do a full-search of all possible arrangements of pieces!
 // (There are also optimizations that will allow you to skip a lot of the dead search space)
 // take a look at solversSpec.js to see what the tests are expecting
@@ -15,6 +14,21 @@
 
 window.findNRooksSolution = function(n) {
   var solution = undefined; //fixme
+  var rookBoard = new Board({n:n})
+  var plays = rookBoard.rows();
+  var row = [];
+  var col = [];
+
+  for(var i = 0; i < n; i++){
+    for(var y = 0; y < n; y++){
+      if(row.indexOf(i) === -1 && col.indexOf(y) === -1){
+        row.push(i);
+        col.push(y);
+        plays[i][y] = 1;
+      }
+    }
+  }
+  solution = plays;
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
