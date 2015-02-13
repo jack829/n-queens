@@ -94,11 +94,6 @@ window.findNQueensSolution = function(n) {
   };
   solution = combos(0) || board.rows();
 
-
-// if(solution===undefined || solution.length===0){
-//   solution = board.rows();
-// }
-
 return solution;
 };
 
